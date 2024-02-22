@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+typedef struct pontos {
+    float x;
+    float y;
+} Pontos;
+
+float distancia(Pontos p1, Pontos p2);
+
+int main() {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
+    Pontos ponto1;
+    ponto1.x = 0;
+    ponto1.y = 0;
+
+    Pontos ponto2 = {2, 2};
+
+    float dist = distancia(ponto1, ponto2);
+
+    printf("A distância é: %.2f\n", dist);
+
+    return 0;
+}
+
+float distancia(Pontos p1, Pontos p2) {
+    float d = sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
+    return d;
+}
