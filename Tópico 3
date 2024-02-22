@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+int main() {
+    float T2 = 25, v2 = 150, C2 = 90;
+
+    float T1, v1;
+    float C1 = 0;
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    printf("Informe a temperatura da corrente de água pura (T1):");
+    scanf_s("%f", &T1);
+
+    printf("Informe a vazao volumetrica da corrente de água pura (v1):");
+    scanf_s("%f", &v1);
+
+    float v3, T3, C3;
+
+    v3 = v1 + v2;
+    C3 = ((C1 * v1) + (C2 * v2)) / v3;
+    T3 = ((T1 * v1) + (T2 * v2 - log(T2 * v2))) / v3;
+
+    printf("A concentração da corrente final e: %.2f (m/m) \nE a temperatura da corrente final é: = %.0f C\n", C3, T3);
+
+    if ((45 <= C3 && C3 <= 55) && (45 <= T3 && T3 <= 50)) {
+        printf("Os parâmetros estão dentro das especificações.");
+    } else if ((C3 < 45) && (45 <= T3 && T3 <= 50)) {
+        printf("A concentracão de NH4Cl esta abaixo da especificação. Diminua a vazão da corrente 1 (agua pura).");
+    } else if ((C3 > 55) && (45 <= T3 && T3 <= 50)) {
+        printf("A concentracao de NH4Cl esta acima da especificacao. Aumente a vazao da corrente 1 (agua pura).");
+    } else if ((T3 < 45) && (45 <= C3 && C3 <= 55)) {
+        printf("A temperatura da corrente esta abaixo da especficacao. Aumente a temperatura da corrente 1 com o uso de um trocador de calor.");
+    } else if ((T3 > 50) && (45 <= C3 && C3 <= 55)) {
+        printf("A temperatura da corrente esta acima da especfica?ao. Diminua a temperatura da corrente 1 com o uso de um trocador de calor.");
+    } else {
+        printf("Os dois parametros estao fora das especificacoes, reavalie.");
+    }
+
+    return 0;
+}
