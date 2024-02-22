@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("\t%c renomada cientista %s ganhou %i Premios Nobel. Suas descobertas sobre o polônio e o radio envolveram medidas precisas, como %.3f para a meia-vida do polonio em anos.\n", 'A', "Marie Curie", 2, 3.14258945);
+    printf("\tCurie percebeu que os raios X, com comprimento de onda entre %.1E e %.0E m, seriam importantes para tratar ferimentos de balas e fraturas. \n\tPor isso, colocou em pratica um servico de radiografia movel.", 0.00000001, 0.0000000000001);
+
+    return 0;
+}
