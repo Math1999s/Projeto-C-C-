@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <locale.h>
+
+typedef struct {
+    int hora;
+    int minuto;
+} tempo;
+
+int main() {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
+    tempo a, *b;
+
+    b = &a;
+
+
+    // Forma de declarar o valor de uma variável dentro de uma estrutura utilizando ponteiro. O uso de () é devido a precedência de sinais
+    (*b).hora = 10;
+    // Outra forma de declaração
+    b->minuto = 20;
+
+    printf("O horário é: %d:%d", b->hora, b->minuto);
+
+    return 0;
+}
+
