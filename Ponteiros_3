@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <locale.h>
+
+typedef struct {
+    int hora;
+    int minuto;
+} horario;
+
+int main() {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
+    int lista[3] = {1,2,3};
+    int *p1, *p2;
+
+    p1 = &lista[0], p2 = &lista[1];
+
+    if (*p1 > *p2) {
+        printf("O número %d é maior que %d", *p1, *p2);
+    } else {
+        printf("O número %d é menor que %d", *p1, *p2);
+    }
+    printf("\n");
+    if (p1 < p2) {
+        printf("O ponteiro de %d está a frente de %d", *p1, *p2);
+    } else {
+        printf("O número %d está atrás de %d", *p1, *p2);
+    }
+
+
+    printf("\n");
+    printf("Endereço de %d é: %d", *p1, p1);
+    printf("\n");
+    printf("Endereço de %d é: %d", *p2, p2);
+
+    return 0;
+}
