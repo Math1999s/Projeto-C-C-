@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
 
-typedef struct {
-    int hora;
-    int minuto;
-} horario;
-
 int main() {
 
     setlocale(LC_ALL, "Portuguese_Brazil");
