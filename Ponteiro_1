@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
+    int variavel = 10;
+    int *ponteiro;
+
+    //Link entre o ponteiro e a variável
+    ponteiro = &variavel;
+
+    printf("A variável é: %d", variavel);
+    printf("\n");
+
+    // Chamada utilizando ponteiro
+    printf("A variável é: %d", *ponteiro);
+    printf("\n");
+
+    printf("O endereço da variável é: %d", &variavel);
+    printf("\n");
+    printf("O endereço da variável é: %d", ponteiro);
+
+    return 0;
+}
+
